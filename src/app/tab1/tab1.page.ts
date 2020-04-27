@@ -1,3 +1,6 @@
+import { FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+
+import { FbloginService } from '../services/fblogin.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +10,13 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  public facebook_account ;
+
+  constructor(private fb: FbloginService ) {}
+
+  loguearFB(){
+    this.facebook_account=this.fb.loginFB();
+
+  }
 
 }
